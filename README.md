@@ -28,5 +28,4 @@ Here, we will perform AI operations on the data composed from Part 1.
 
 This aims to improve and substantiate predictions of future events with actual statistical data.
 
-Current Date and Time (UTC - YYYY-MM-DD HH:MM:SS formatted): 2025-12-10 08:26:12
-Current User's Login: FelizCruz
+*Updated on : December 10*
