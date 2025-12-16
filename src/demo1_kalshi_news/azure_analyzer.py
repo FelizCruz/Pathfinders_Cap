@@ -142,7 +142,7 @@ Provide a clear, structured analysis that synthesizes both data sources."""
             prompt = f"""Extract the top 10 most important key phrases from the following text. Return only the phrases as a comma-separated list.
 
 Text:
-{text[:3000]}  # Limit text length
+{text[:3000]}  # Limit to ~3000 chars to stay within token limits and keep response focused
 """
             
             response = self.client.chat.completions.create(

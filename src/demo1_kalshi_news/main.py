@@ -47,9 +47,9 @@ def main():
     print_section("Step 2: Fetching Kalshi Prediction Market Data")
     
     if not kalshi_client.login():
-        print("\n✗ Failed to authenticate with Kalshi. Demo cannot continue.")
+        print("\n⚠ Failed to authenticate with Kalshi. Continuing with sample data.")
         print("Note: If you don't have Kalshi credentials, this is expected.")
-        print("The demo would normally fetch prediction market events here.")
+        print("The demo will use sample topics to demonstrate the pipeline.")
         # For demo purposes, create mock data
         kalshi_events = []
     else:
