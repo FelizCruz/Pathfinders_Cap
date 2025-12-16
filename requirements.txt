@@ -1,0 +1,12 @@
+# Core dependencies
+python-dotenv==1.0.0
+requests==2.31.0
+
+# Azure OpenAI
+openai==1.12.0
+
+# Data handling
+pandas==2.1.4
+
+# Optional: for better output formatting
+colorama==0.4.6
