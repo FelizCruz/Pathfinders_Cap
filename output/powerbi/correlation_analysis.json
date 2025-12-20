@@ -1,0 +1,15 @@
+{
+  "timestamp": "2025-12-19T23:14:07.764357",
+  "analysis_text": "Based on current news sentiment, markets show strong correlation with Fed policy expectations.",
+  "market_count": 2,
+  "markets_analyzed": [
+    {
+      "ticker": "FED-RATE-DEC",
+      "title": "Fed Rate Decision December"
+    },
+    {
+      "ticker": "ELECTION-2024",
+      "title": "2024 Presidential Election"
+    }
+  ]
+}

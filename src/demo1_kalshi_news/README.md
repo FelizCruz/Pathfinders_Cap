@@ -1,18 +1,20 @@
 # Demo 1: Kalshi API + News API + Azure AI Integration
 
-This demo demonstrates the integration of Kalshi prediction market data with
-news data from News API, and uses Azure OpenAI for semantic analysis to understand
-correlations between market predictions and news sentiment.
+
+This demo provides a Streamlit dashboard that integrates Kalshi prediction market data with news from News API, and uses Azure OpenAI (or GitHub Models) for semantic analysis to understand correlations between market predictions and news sentiment.
+
+**Power BI integration is deprecated. All results are now visualized in the Streamlit dashboard.**
 
 ## Overview
 
-The demo follows this pipeline:
 
-1. **Fetch Prediction Market Data**: Retrieves current prediction market events from Kalshi API
-2. **Extract Topics**: Identifies key topics from the prediction markets
-3. **Fetch Related News**: Searches for news articles related to those topics using News API
-4. **Azure AI Analysis**: Uses Azure OpenAI to analyze correlations between market sentiment and news coverage
-5. **Output Results**: Displays insights about how news sentiment relates to prediction markets
+## Dashboard Logic
+
+1. **Category Selection**: User selects a prediction market category (e.g. Politics, Economy)
+2. **Event Selection**: User chooses a market event (e.g. "Next US Presidential Election Winner?")
+3. **Market Visualization**: Dashboard displays a pie chart of all mutually exclusive outcomes (e.g. candidate probabilities)
+4. **News Fetching**: Related news articles are fetched using a smart query (top candidate + context)
+5. **AI Analysis**: GPT-5 (via Azure OpenAI or GitHub Models) analyzes how news sentiment relates to market probabilities
 
 ## Prerequisites
 
@@ -62,35 +64,31 @@ NEWS_API_URL=https://newsapi.org/v2
 - Azure OpenAI and News API credentials are required for the demo to run
 - Kalshi credentials are optional - the demo will use sample topics if not provided
 
-## Running the Demo
+
+## Running the Dashboard
 
 From the repository root:
 
 ```bash
-python src/demo1_kalshi_news/main.py
+streamlit run src/demo1_kalshi_news/dashboard.py
 ```
 
-Or from the demo directory:
-
-```bash
-cd src/demo1_kalshi_news
-python main.py
-```
 
 ## Expected Output
 
-The demo will:
+The dashboard will:
 
 1. Validate all API credentials
 2. Connect to Kalshi API and fetch prediction market events
-3. Extract topics from the events
-4. Fetch related news articles for those topics
-5. Send combined data to Azure OpenAI for analysis
-6. Display:
-   - Summary of prediction markets
-   - Related news articles found
+3. Display categories and events for user selection
+4. Show pie chart of market probabilities (all outcomes)
+5. Fetch and display relevant news articles
+6. Send combined data to Azure OpenAI for analysis
+7. Display:
+   - Market probabilities (pie chart)
+   - Related news articles
    - AI-generated analysis of correlations
-   - Key phrases extracted from the combined data
+
 
 ## File Structure
 
@@ -100,8 +98,8 @@ src/demo1_kalshi_news/
 ├── kalshi_client.py    # Kalshi API client
 ├── news_client.py      # News API client
 ├── azure_analyzer.py   # Azure OpenAI integration
-├── main.py            # Main orchestration script
-└── README.md          # This file
+├── dashboard.py        # Streamlit dashboard (main entry point)
+└── README.md           # This file
 ```
 
 ## Troubleshooting
@@ -131,12 +129,12 @@ If you don't have Kalshi API credentials, the demo will fall back to using sampl
 - [News API Documentation](https://newsapi.org/docs)
 - [Azure OpenAI Documentation](https://learn.microsoft.com/en-us/azure/ai-services/openai/)
 
+
 ## Future Enhancements
 
-Potential improvements for this demo:
+Potential improvements for this dashboard:
 
-- Add data visualization of market trends vs. news sentiment
+- Add historical market price charts
 - Export results to PDF/CSV format
-- Add historical data analysis
 - Integrate additional data sources (X/Twitter)
 - Add real-time streaming updates

@@ -15,6 +15,7 @@ from demo1_kalshi_news.kalshi_client import KalshiClient
 from demo1_kalshi_news.news_client import NewsClient
 from demo1_kalshi_news.azure_analyzer import AzureAnalyzer
 from demo1_kalshi_news.text_analytics_client import TextAnalyticsClient
+from demo1_kalshi_news.powerbi_export import PowerBIExporter
 
 
 def print_section(title: str):
@@ -131,6 +132,31 @@ def main():
         print("Top Key Phrases:")
         for idx, phrase in enumerate(key_phrases[:10], 1):
             print(f"  {idx}. {phrase}")
+    
+    # Step 8: Export data for Power BI
+    print_section("Step 8: Exporting Data for Power BI Dashboard")
+    powerbi_exporter = PowerBIExporter()
+    
+    # Get sentiment results if available
+    sentiment_results = ta_results.get('sentiment', []) if 'ta_results' in dir() else []
+    
+    export_paths = powerbi_exporter.export_all(
+        kalshi_events=kalshi_events,
+        news_data=news_by_topic,
+        analysis=analysis,
+        sentiment_results=sentiment_results
+    )
+    
+    print("\n📊 Power BI Data Files:")
+    for export_type, path in export_paths.items():
+        print(f"  • {export_type}: {path}")
+    
+    print("\n💡 To use in Power BI:")
+    print("  1. Open Power BI Desktop")
+    print("  2. Get Data → Text/CSV or JSON")
+    print("  3. Navigate to the 'output/powerbi' folder")
+    print("  4. Import the CSV/JSON files")
+    print("  5. Create visualizations from the imported data")
     
     print_section("Demo Complete!")
     print("✓ Successfully demonstrated Kalshi + News API + Azure AI integration")
