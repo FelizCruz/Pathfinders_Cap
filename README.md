@@ -1,8 +1,4 @@
-# Pathfinders Cap
-
-## Project Overview
-
-Initially, we are going to focus on a simple demo and then later think about adding integrations in this order: Speech (Voiced Transcripts), Power BI, Event Hubs.
+# Pathfinders Capstone for Tecoholic Azure Engineering
 
 ## Demo
 
@@ -28,4 +24,3 @@ Here, we will perform AI operations on the data composed from Part 1.
 
 This aims to improve and substantiate predictions of future events with actual statistical data.
 
-*Updated on : December 10*
