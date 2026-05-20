@@ -12,7 +12,7 @@ The core mission is to substantiate event predictions with statistical sentiment
 
 ---
 
-## 🚀 Key Features
+## Key Features
 
 - **Predictive Market Integration**: Real-time data fetching from Kalshi API for various event categories (Politics, Economics, etc.).
 - **Smart News Correlation**: Automated retrieval of relevant news articles based on market-leading outcomes.
@@ -22,7 +22,7 @@ The core mission is to substantiate event predictions with statistical sentiment
 
 ---
 
-## 🛠️ Technical Stack
+## Technical Stack
 
 - **Frontend**: [Streamlit](https://streamlit.io/)
 - **Language**: Python 3.8+
@@ -34,7 +34,7 @@ The core mission is to substantiate event predictions with statistical sentiment
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 ```text
 Pathfinders_Cap/
@@ -51,7 +51,7 @@ Pathfinders_Cap/
 
 ---
 
-## 🚦 Getting Started
+## Getting Started
 
 ### 1. Prerequisites
 - Python 3.8 or higher installed.
@@ -83,7 +83,7 @@ streamlit run src/demo1_kalshi_news/dashboard.py
 
 ---
 
-## 🗺️ Roadmap
+## Roadmap
 
 - [x] **Phase 1: Kalshi + News API Integration** (Current)
 - [ ] **Phase 2: X (Twitter) Integration** - Real-time social sentiment analysis.
@@ -95,8 +95,10 @@ streamlit run src/demo1_kalshi_news/dashboard.py
 
 ---
 
-## 📝 Note on Integrations
+## Note on Integrations
 Initially, the project focuses on the Kalshi + News API demo. Future iterations will explore the combination of social media (X) data and prediction markets to refine accuracy further.
+
+Needs AI API keys to run
 
 ---
 *Last Updated: May 20, 2026*
